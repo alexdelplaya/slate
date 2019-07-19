@@ -37,9 +37,69 @@ html, body {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// TABLE OF CONTENTS
+// NAV BAR FOR DELPLAYA
 ////////////////////////////////////////////////////////////////////////////////
 
+.red {
+  color:#FF0000;
+  font-weight:bold;
+}
+.navbar-container .navbar {
+  position:fixed!important;
+  width: 100%!important;
+  height:80px;
+  background:#fff;
+  left:0;
+  top:0;
+  right:0;
+  z-index:5000;
+}
+
+.navbar {
+  width:100%;
+  border-bottom:1px solid rgba(0,0,0,.15);
+  background-color:#fff;
+  position:fixed;
+}
+
+@media (min-width: 48em) {
+  nav .logo-container {
+    width: auto;
+  }
+}
+nav .logo-container {
+  width: 100%;
+}
+@media (min-width: 48em)
+{
+  nav {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 48em)
+{
+  nav .logo {
+    display: inline-block;
+    margin: 6px 0 0 15px;
+  }
+}
+nav .logo {
+  height: 63px;
+  width: 300px;
+  margin: 10px;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  color: transparent;
+  text-shadow: none;
+  position: relative;
+}
+////////////////////////////////////////////////////////////////////////////////
+// TABLE OF CONTENTS
+////////////////////////////////////////////////////////////////////////////////
 #toc > ul > li > a > span {
   float: right;
   background-color: #2484FF;
@@ -54,7 +114,7 @@ html, body {
   overflow-x: hidden;
   position: fixed;
   z-index: 30;
-  top: 0;
+  top: 80px;
   left: 0;
   bottom: 0;
   width: $nav-width;
@@ -75,7 +135,7 @@ html, body {
   .logo {
     display: block;
     max-width: 100%;
-    margin-bottom: $logo-margin;
+    margin: $logo-margin;
   }
 
   &>.search {
@@ -253,7 +313,7 @@ html, body {
   z-index: 10;
   background-color: $main-bg;
   min-height: 100%;
-
+  margin-top:80px;
   padding-bottom: 1px; // prevent margin overflow
 
   // The dark box is what gives the code samples their dark background.
@@ -346,13 +406,13 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
+    font-size: 30px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    //border-top: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
     background-color: #fdfdfd;
   }
 
@@ -449,9 +509,9 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0,0,0,0.04);
     padding: 3px;
-    border-radius: 3px;
+    border-radius: 5px;
     @extend %break-words;
     @extend %code-font;
   }
